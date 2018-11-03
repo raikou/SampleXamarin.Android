@@ -30,7 +30,17 @@ namespace SampleMoveToOtherView
 	        var button1 = FindViewById<Button>(Resource.Id.button1);
 			button1.Click += Button1OnClick;
 
+			//Dropboxにデータを作成
+			//https://github.com/dropbox/dropbox-sdk-dotnet
+			var button2 = FindViewById<Button>(Resource.Id.dropboxButton);//TODO:なぜかうまくできない
+			button2.Click += Button2OnClick;
+
         }
+
+	    private void Button2OnClick(object sender, EventArgs e)
+	    {
+		    //Dropboxにファイルを保存する
+	    }
 
 	    private void Button1OnClick(object sender, EventArgs e)
 	    {
