@@ -101,5 +101,39 @@ namespace SampleMoveToOtherView.Dropbox
 			Console.WriteLine("アップロード-END");
 		}
 
+		/// <summary>
+		/// pathのSqliteのファイルをDropboxにUploadする
+		/// </summary>
+		/// <param name="path"></param>
+		/// <returns></returns>
+		public async Task UploadSqliteDB(string path)
+		{
+			using (var dbx = new DropboxClient(HiddenData.accessTokenForDropbox))
+			{
+				string dbFilePath = path;
+
+				Console.WriteLine("アップロード:SQLite");
+				try
+				{
+
+					using (var data = new StreamReader(dbFilePath))
+					{
+						var updated = await dbx.Files.UploadAsync(
+							"/data" + DateTime.Now.ToString("yyyy_MM_dd") + ".db3",
+							WriteMode.Overwrite.Instance,
+							body: data.BaseStream);
+						Console.WriteLine("WriteLine:Upload");
+						Console.WriteLine("Saved " + dbFilePath);
+					}
+				}
+				catch (Exception e)
+				{
+					Console.WriteLine("エラー：" + e);
+				}
+				Console.WriteLine("アップロード-END");
+			}
+
+		}
+
 	}
 }
