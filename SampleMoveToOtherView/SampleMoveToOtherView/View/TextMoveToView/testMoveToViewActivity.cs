@@ -30,7 +30,6 @@ namespace SampleMoveToOtherView.Resources.layout.TextMoveToView
 			var text = FindViewById<TextView>(Resource.Id.textView1);
 			text.Text = data;
 
-			// Create your application here
 		}
 	}
 }

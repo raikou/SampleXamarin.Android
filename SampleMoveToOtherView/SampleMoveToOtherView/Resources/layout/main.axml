@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-	<Button
-		android:text="画面遷移&データ渡し"
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:minWidth="25px"
-		android:minHeight="25px"
-		android:id="@+id/button1" />
-	<EditText
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:text="渡すデータ入力欄"
-		android:id="@+id/editText1" />
+		android:layout_height="match_parent">
+		<Button
+			android:text="画面遷移とデータ渡し"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:id="@+id/button1" />
+		<EditText
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="渡すデータ入力欄"
+			android:id="@+id/editText1" />
+		<Button
+			android:text="DropBoxにデータを作成"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/dropboxButton" />
 
-</LinearLayout>
+	</LinearLayout>
+</RelativeLayout>
